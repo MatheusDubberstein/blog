@@ -16,6 +16,7 @@ export default function Header() {
       </header>
       <aside>
         <Link to="/projects">PROJETOS</Link>
+        <Link to="/portifolio">PORTIFÓLIO</Link>
         <Link to="/profile">SOBRE</Link>
       </aside>
     </Container>
