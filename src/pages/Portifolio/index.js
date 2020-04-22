@@ -28,10 +28,13 @@ export default function Portifolio() {
           <img src={imagePaper} alt="Imagem papel" />
           <strong>Papel</strong>
         </Link>
-        <Link to="/portifolio/videos">
+        <a
+          href="https://www.youtube.com/channel/UCREAoxOI_1653vZdJohtBbA"
+          target="_bank"
+        >
           <img src={imageDigital} alt="Imagem Digital" />
           <strong>Videos</strong>
-        </Link>
+        </a>
       </Folders>
     </Container>
   );
