@@ -39,6 +39,7 @@ export const Scroll = styled(PerfectScroll)`
   > div {
     /* display: grid; */
     /* grid-template-columns: 1fr 1fr 1fr; */
+    padding: 10px;
     > img {
       /* width: 100%;
       height: 100%; */

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 
+import Gallery from 'react-photo-gallery';
+import Carousel, { Modal, ModalGateway } from 'react-images';
 import { Link } from 'react-router-dom';
 import { Container, Scroll } from './styles';
 import image1 from '~/assets/images/paper/1.png';
@@ -47,7 +49,7 @@ import image42 from '~/assets/images/paper/42.png';
 import image43 from '~/assets/images/paper/43.png';
 
 export default function PaperFolder() {
-  const teste = [
+  const images = [
     { src: image1, width: 1, height: 1 },
     { src: image2, width: 1, height: 1 },
     { src: image3, width: 1, height: 1 },
@@ -92,7 +94,18 @@ export default function PaperFolder() {
     { src: image42, width: 1, height: 1 },
     { src: image43, width: 1, height: 1 },
   ];
+  const [currentImage, setCurrentImage] = useState(0);
+  const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
+  const openLightbox = useCallback((event, { photo, index }) => {
+    setCurrentImage(index);
+    setViewerIsOpen(true);
+  }, []);
+
+  const closeLightbox = () => {
+    setCurrentImage(0);
+    setViewerIsOpen(false);
+  };
   return (
     <Container>
       <header>
@@ -101,10 +114,21 @@ export default function PaperFolder() {
       </header>
       <Scroll>
         <div>
-          {teste.map((item) => (
-            // eslint-disable-next-line
-            <img src={item.src} alt="image" />
-          ))}
+          <Gallery photos={images} onClick={openLightbox} />
+          <ModalGateway>
+            {viewerIsOpen ? (
+              <Modal onClose={closeLightbox}>
+                <Carousel
+                  currentIndex={currentImage}
+                  views={images.map((x) => ({
+                    ...x,
+                    srcset: x.srcSet,
+                    caption: x.title,
+                  }))}
+                />
+              </Modal>
+            ) : null}
+          </ModalGateway>
         </div>
       </Scroll>
     </Container>
