@@ -19,6 +19,7 @@ export const Container = styled.div`
     background: #3e3c4b;
     box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
   }
+
   button {
     display: flex;
     align-items: center;
@@ -30,6 +31,7 @@ export const Container = styled.div`
     :hover {
       background: #3e3c4b;
     }
+
     > img {
       width: 60px;
       height: 60px;
@@ -59,6 +61,55 @@ export const Container = styled.div`
       transition: color 0.2s;
       :hover {
         color: ${darken(0.2, '#f9fafd')};
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    height: 80px;
+    button {
+      display: flex;
+      align-items: center;
+      border: none;
+      border-radius: 10px;
+      padding: 5px;
+      transition: background 0.2s;
+      background: #32303e;
+      :hover {
+        background: #3e3c4b;
+      }
+
+      > img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        margin-right: 10px;
+        border: 3px solid #f9fafd;
+        box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+      }
+      > div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        > strong {
+          color: #f9fafd;
+          font-size: 12px;
+        }
+        > small {
+          font-size: 10px;
+          color: #cccfd9;
+        }
+      }
+    }
+    aside {
+      display: flex;
+      > a {
+        font-size: 10px;
+        color: #f9fafd;
+        margin: 0 10px;
+        transition: color 0.2s;
+        :hover {
+          color: ${darken(0.2, '#f9fafd')};
+        }
       }
     }
   }

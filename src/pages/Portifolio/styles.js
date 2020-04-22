@@ -2,11 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-columns: 1fr 500px;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 250px;
   grid-template-areas: 'description spotlight' 'folders spotlight';
   grid-gap: 10px;
   height: 100%;
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 400px 250px;
+    grid-template-areas: 'description' 'spotlight' 'folders';
+  }
 `;
 
 export const Folders = styled.div`
@@ -45,10 +50,11 @@ export const Folders = styled.div`
 
 export const Spotlight = styled.div`
   grid-area: spotlight;
-  height: 100%;
-  width: 100%;
-  display: grid;
-  grid-template-rows: 50px 1fr;
+  /* height: 100%;
+  width: 100%; */
+  display: flex;
+  /* grid-template-rows: 50px 1fr; */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.1);
@@ -59,11 +65,12 @@ export const Spotlight = styled.div`
     align-items: center;
     justify-content: center;
     width: 100%;
+    height: 50px;
     color: #f9fafd;
     font-size: 25px;
   }
   > img {
-    height: 100%;
+    height: 90%;
     width: 100%;
     border-radius: 10px;
     border: 3px solid #32303e;

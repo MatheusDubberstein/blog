@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Folders, Spotlight, Description } from './styles';
 import imageDigital from '~/assets/images/digital/2.PNG';
-import imagePaper from '~/assets/images/paper/1.jpg';
+import imagePaper from '~/assets/images/paper/1.png';
 
 export default function Portifolio() {
   return (

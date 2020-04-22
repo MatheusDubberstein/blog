@@ -30,9 +30,20 @@ export const Container = styled.div`
     background: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 0 10px;
+    height: 75vh;
+    overflow: scroll;
   }
 `;
 
 export const Scroll = styled(PerfectScroll)`
-  max-height: calc(100% - 100px);
+  > div {
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr 1fr; */
+    > img {
+      /* width: 100%;
+      height: 100%; */
+      max-width: 300px;
+      max-height: 300px;
+    }
+  }
 `;
