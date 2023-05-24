@@ -7,6 +7,7 @@ import history from './services/history';
 import GlobalStyle from './styles/global';
 
 export default function App() {
+  // test
   return (
     <Router history={history}>
       <Routes />
